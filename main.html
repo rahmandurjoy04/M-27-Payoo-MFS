@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <!-- Daisy UI CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5.0.0-beta.8/daisyui.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-slate-800">
+<!-- Home Interface -->
+    <section class="max-w-md min-h-screen mx-auto py-6 bg-gray-100">
+        <header>
+            <nav class="flex justify-around">
+                <div class="flex">
+                    <img class="w-16" src="assets/Group.png" alt="">
+                    <div>
+                        <h1 class="text-3xl font-bold">$ <span id="main-balance">4500</span></h1>
+                        <p class="border rounded p-1">Available Balance</p>
+                    </div>
+                </div>
+                <button class="btn">Logout</button>
+            </nav>
+            <section>
+                <h1 class="mt-10 text-2xl font-bold mb-2">Welcome to Payooo!</h1>
+                <p>Enjoy easy and convenient financial services with us. <br> Cashout harge is low and </p>
+                <div class="cards grid grid-cols-3 mt-12 gap-1 p-1">
+                    <div id="add-money-box" class="box border rounded p-4 text-center cursor-pointer">
+                        <img  class="w-8 mx-auto" src="assets/wallet 1.png" alt="">
+                        <h3>Add Money</h3>
+                    </div>
+                    <div id="cash-out-box" class="box border rounded p-4 text-center cursor-pointer">
+                        <img class="w-8 mx-auto" src="assets/send 1.png" alt="">
+                        <h3 >Cash Out</h3>
+                    </div>
+                    <div id="transfer-money-box" class="box border rounded p-4 text-center cursor-pointer">
+                        <img class="w-8 mx-auto" src="assets/money 1.png" alt="">
+                        <h3>Transfer Money</h3>
+                    </div>
+                    <div id="get-bonus-box" class="box border rounded p-4 text-center cursor-pointer">
+                        <img class="w-8 mx-auto" src="assets/financial 1.png" alt="">
+                        <h3>Get Bonus</h3>
+                    </div>
+                    <div id="pay-bill-box" class="box border rounded p-4 text-center cursor-pointer">
+                        <img class="w-8 mx-auto" src="assets/purse 1.png" alt="">
+                        <h3>Pay Bill</h3>
+                    </div>
+                    <div id="transaction-box" class="box border rounded p-4 text-center cursor-pointer">
+                        <img class="w-8 mx-auto" src="assets/transaction 1.png" alt="">
+                        <h3>Transactions</h3>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- AddMoney Section -->
+
+            <section id="addmoney" class="bg-gray-100">
+                <h1 class="text-black text-xl font-bold p-6">Add Money</h1>
+                <div class="card  w-full max-w-sm shrink-0 shadow-2xl mx-auto">
+                    <div class="card-body">
+                        <label for="">Select Bank</label>
+                        <select id="all-bank" class="select rounded-3xl">
+                            <option disabled selected>Select Bank</option>
+                            <option value="Bkash">Bkash</option>
+                            <option value="Nagad">Nagad</option>
+                            <option value="Rocket">Rocket</option>
+                        </select>
+                        <fieldset class="fieldset">
+                            <label class="fieldset-label">Bank Account Number</label>
+                            <input value="01712345678" id="Account-number" type="number" class="input rounded-3xl"
+                                placeholder="Enter 11 digit Account Number" required />
+                            <label class="fieldset-label ">Amount to Add</label>
+                            <input id="amount" type="number" class="input rounded-3xl"
+                                placeholder="Add Amount to Withdraw" required />
+                            <label class="fieldset-label ">PIN Number</label>
+                            <input value="1234" id="pin" type="number" class="input rounded-3xl" placeholder="Enter 4 digit PIN"
+                                required />
+                            <button id="add-money-btn"
+                                class="btn btn-neutral mt-4 border-none bg-blue-600 rounded-3xl">Add Money</button>
+                        </fieldset>
+                    </div>
+            </section>
+
+            <!-- CashOut Section -->
+            <section id="cashout" class="bg-gray-100" >
+                <h2 class="m-8 text-2xl font-bold ">Cash-Out</h2>
+                <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl mx-auto">
+                    <div class="card-body">
+                        <fieldset class="fieldset">
+                            <label class="fieldset-label">Agent Number</label>
+                            <input  id="agent-number" type="number" class="input rounded-3xl" placeholder="11 Digit Number" required />
+
+                            <label  class="fieldset-label">Amount</label>
+                            <input id="cashout-amount"  type="number" class="input rounded-3xl" placeholder="Amount to Withdraw" required />
+
+                            <label class="fieldset-label">PIN</label>
+                            <input  id="cashout-pin" type="number" class="input rounded-3xl" placeholder="4 Digit PIN" required />
+                            
+                            <button id="cashout-btn" class="btn btn-neutral mt-4 rounded-3xl bg-blue-600">CashOut</button>
+                        </fieldset>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Transfer Money Section -->
+             <section id="transfer-money">
+                <h1 class="m-3 text-2xl font-bold  ">Transfer Money</h1>
+                <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl mx-auto">
+                    <div class="card-body">
+                        <fieldset class="fieldset">
+                            <label class="fieldset-label">User Account Number</label>
+                            <input  id="transfer-account-number" type="number" class="input rounded-3xl" placeholder="Enter 11 Digit Number" required />
+
+                            <label  class="fieldset-label">Amount</label>
+                            <input id="transfer-amount"  type="number" class="input rounded-3xl" placeholder="Enter Amount to Transfer" required />
+
+                            <label class="fieldset-label">PIN Number</label>
+                            <input  id="transfer-pin" type="number" class="input rounded-3xl" placeholder="Enter 4 Digit PIN Number" required />
+                            
+                            <button id="transfer-btn" class="btn btn-neutral mt-4 rounded-3xl bg-blue-600">Send Now</button>
+                        </fieldset>
+                    </div>
+                </div>
+             </section>
+
+             <!-- Get Bonus Section -->
+              <section id="get-bonus-section">
+               <h1 class="m-3 text-2xl font-bold ">Get Bonus</h1>
+               <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl mx-auto">
+                <div class="card-body">
+                    <fieldset class="fieldset">
+                        <label class="fieldset-label">Enter Bonus Coupon</label>
+                        <input  id="transfer-account-number" type="number" class="input rounded-3xl" placeholder="Enter Your Coupon" required />
+
+                        <button id="get-bonus-btn" class="btn btn-neutral mt-4 rounded-3xl bg-blue-600">Get Bonus</button>
+                    </fieldset>
+                </div>
+            </div>
+              </section>
+
+
+              <!--Pay Bill Section -->
+
+            <section id="pay-bill-section" class="bg-gray-100">
+                <h1 class="text-black text-xl font-bold p-6">Pay Bill</h1>
+                <div class="card  w-full max-w-sm shrink-0 shadow-2xl mx-auto">
+                    <div class="card-body">
+                        <label for="">Select To Pay</label>
+                        <select id="all-pay-bank" class="select rounded-3xl">
+                            <option disabled selected>Select Bank</option>
+                            <option value="Bkash">Bkash</option>
+                            <option value="Nagad">Nagad</option>
+                            <option value="Rocket">Rocket</option>
+                        </select>
+                        <fieldset class="fieldset">
+                            <label class="fieldset-label">Biller Account Number</label>
+                            <input value="01712345678" id="biller-account-number" type="number" class="input rounded-3xl"
+                                placeholder="Enter Account Number" required />
+                            <label class="fieldset-label ">Amount to Pay</label>
+                            <input id="amount-to-pay" type="number" class="input rounded-3xl"
+                                placeholder="Add Amount to Pay" required />
+                            <label class="fieldset-label ">PIN Number</label>
+                            <input value="1234" id="pay-bill-pin" type="number" class="input rounded-3xl" placeholder="Enter 4 digit PIN Number"
+                                required />
+                            <button id="pay-bill-btn"
+                                class="btn btn-neutral mt-4 border-none bg-blue-600 rounded-3xl">Pay Now</button>
+                        </fieldset>
+                    </div>
+            </section>
+
+            <!-- Transection History Section -->
+             <section id="transaction-history" class="bg-gray-100">
+                <div class="flex justify-between items-center">
+                    <h1 id="tr-his" class="m-3 text-2xl font-bold  ">Transaction History</h1>
+                <h6 class="pr-8 text-[rgba(8, 8, 8, 0.5)]">View All</h6>
+                </div>
+
+                <div id="transaction-container" class="m-2">
+                    <div class="flex gap-4 border rounded-lg p-2 bg-white m-2">
+                        <div class="w-12 h-12 rounded-full bg-gray-200 flex justify-center items-center ">
+
+                            <img  src="assets/wallet 1.png" alt="">
+                        </div>
+                        <div>
+                            <h1 class="font-bold">Electricity Bill</h1>
+                        <p>Today 1:44 AM</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex gap-4 border rounded-lg p-2 bg-white m-2">
+                        <div class="w-12 h-12 rounded-full bg-gray-200 flex justify-center items-center">
+
+                            <img  src="assets/wallet 1.png" alt="">
+                        </div>
+                        <div>
+                            <h1 class="font-bold">Bank Deposit</h1>
+                        <p>Today 1:44 AM</p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4 border rounded-lg p-2 bg-white m-2">
+                        <div class="w-12 h-12 rounded-full bg-gray-200 flex justify-center items-center">
+
+                            <img  src="assets/wallet 1.png" alt="">
+                        </div>
+                        <div>
+                            <h1 class="font-bold">Mobile Recharge</h1>
+                        <p>Today 1:44 AM</p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4 border rounded-lg p-2 bg-white m-2" >
+                        <div class="w-12 h-12 rounded-full bg-gray-200 flex justify-center items-center">
+
+                            <img  src="assets/wallet 1.png" alt="">
+                        </div>
+                        <div>
+                            <h1 class="font-bold">Gas Bill</h1>
+                        <p>Today 1:44 AM</p>
+                        </div>
+                    </div>
+                </div>
+             </section>
+        </header>
+    </section>
+    <!-- JS Files -->
+     <script src="script/pay-bill.js"></script>
+     <script src="script/get-bonus.js"></script>
+     <script src="script/transfer-money.js"></script>
+     <script src="script/transaction-history.js"></script>
+    <script src="script/addMoney.js"></script>
+    <script src="script/toggle.js"></script>
+    <script src="script/cashout.js"></script>
+    <script src="utilities/utilities.js"></script>
+
+    
+</body>
+
+</html>
