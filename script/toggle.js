@@ -47,6 +47,8 @@ document.getElementById('transfer-money-box')
         handleToggle('transaction-history', 'none');
         handleToggle('cashout', 'none');
         handleToggle('pay-bill-section', 'none');
+        handleToggle('get-bonus-section', 'none');
+
 
 
     })
